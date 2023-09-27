@@ -27,7 +27,6 @@ public class Main {
     static class MyHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange t) throws IOException, JobException {
-            // String response = "BQ Job Instantiated";
 
             Long out = null;
             try {
@@ -39,7 +38,6 @@ public class Main {
             }
 
             String response = "Query Execution time : " + String.valueOf((double) out / 1000) + " seconds.";
-            // String.valueOf(out)
             t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
