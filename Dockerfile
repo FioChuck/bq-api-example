@@ -11,9 +11,7 @@ RUN mvn package -DskipTests
 
 FROM openjdk:20
 
-WORKDIR /app
-
-COPY target/bq-api-example-1.0-SNAPSHOT-jar-with-dependencies.jar /
+COPY --from=build-env /app/target/bq-api-example-1.0-SNAPSHOT-jar-with-dependencies.jar /
 
 ENV PORT 8080
 
