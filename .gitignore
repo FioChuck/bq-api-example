@@ -1,4 +1,4 @@
-target
-.vscode
-build.sh
+target/
+.vscode/
+*.sh
 dependency-reduced-pom.xml
