@@ -48,7 +48,8 @@ public class Main {
     public static Long query() throws JobException, InterruptedException {
         BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
         QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(
-                "SELECT * FROM `cf-data-analytics.spark_autoscaling.fraud_predictions` WHERE SEARCH(transaction_id,'2798cb9e\\-42e5\\-40ca\\-bdcd\\-4dcd4e01f8e2')")
+                "SELECT * FROM `cf-data-analytics.spark_autoscaling.fraud_predictions` WHERE SEARCH(transaction_id,'2798cb9e\\\\-"
+                        + "42e5" + "\\\\-40c\\\\-bdcd\\\\-4dcd4e01f8e2')")
                 .setUseLegacySql(false)
                 .setUseQueryCache(false)
                 .build();
